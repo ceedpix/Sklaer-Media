@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sklaer Conseil — Consultant CHR, accompagnement de dirigeants de restaurant en Bretagne</title>
+<meta name="description" content="Accompagnement terrain pour dirigeants CHR : audit restaurant, création et reprise, pilotage au quotidien. 30 ans d'expérience, de barman à directeur. Cédric Gicquel, Bretagne.">
+<meta name="theme-color" content="#0D1F35">
+<meta property="og:title" content="Sklaer Conseil — Reprenez les commandes de votre établissement">
+<meta property="og:description" content="Diriger un établissement ne devrait pas signifier tout porter seul. Accompagnement terrain pour dirigeants CHR.">
+<meta property="og:image" content="cedric.jpg">
+<link rel="preload" as="image" href="cedric.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Sklaer Conseil","description":"Consultant CHR : accompagnement terrain des dirigeants de restaurants, bars et hôtels. Audit restaurant, création et reprise, pilotage.","founder":{"@type":"Person","name":"Cédric Gicquel"},"areaServed":"Bretagne","telephone":"+33685959362","email":"sklaerconseil@gmail.com","image":"cedric.jpg"}
+</script>
+<style>
+:root{
+  --navy:#0D1F35;--nl:#162840;--nd:#0a1829;
+  --cu:#B87333;--cl:#C9894A;--cd:#9A6228;
+  --cr:#F0EBE3;--crd:#D9D2C8;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fb:'DM Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--cr);font-family:var(--fb);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip;}
+img{display:block;max-width:100%;}
+section[id]{scroll-margin-top:84px;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s!important;}.d2{transition-delay:.2s!important;}.d3{transition-delay:.3s!important;}.d4{transition-delay:.4s!important;}
+
+/* logo */
+.logo-a{display:flex;align-items:center;text-decoration:none;}
+.lm-c1,.lm-c2,.lm-c3{animation:cPop .7s cubic-bezier(.22,1,.36,1) both;}
+.lm-c1{transform-origin:10px 46px;}.lm-c2{animation-delay:.13s;transform-origin:24px 28px;}.lm-c3{animation-delay:.26s;transform-origin:42px 10px;}
+@keyframes cPop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+/* nav */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;transition:padding .3s,background .3s;}
+#nav.solid{padding:14px 60px;background:rgba(13,31,53,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(184,115,51,.1);}
+.nav-links{display:flex;align-items:center;gap:30px;}
+.nav-links a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(240,235,227,.6);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--cl);}
+.nav-cta{padding:10px 22px;background:var(--cu);color:var(--navy)!important;font-weight:400;}
+.nav-cta:hover{background:var(--cl);}
+.burger{display:none;width:48px;height:48px;background:none;border:none;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px;position:relative;z-index:260;}
+.burger span{display:block;width:24px;height:1.5px;background:var(--cr);transition:transform .3s,opacity .3s;}
+.menu-open .burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.menu-open .burger span:nth-child(2){opacity:0;}
+.menu-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+.mnav{position:fixed;inset:0;z-index:190;background:rgba(13,31,53,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;padding:100px 32px 40px;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
+.menu-open .mnav{opacity:1;visibility:visible;}
+.mnav a:not(.bp){font-family:var(--fd);font-size:34px;color:var(--cr);text-decoration:none;padding:5px 0;}
+.mnav .bp{margin-top:22px;}
+body.menu-open{overflow:hidden;}
+
+/* buttons */
+.bp{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 34px;background:var(--cu);color:var(--navy);font-family:var(--fb);font-size:11px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;}
+.bp:hover{background:var(--cl);transform:translateY(-2px);}
+.bp:disabled{opacity:.35;cursor:not-allowed;transform:none;}
+.bs{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 30px;background:transparent;color:rgba(240,235,227,.75);font-family:var(--fb);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(184,115,51,.35);cursor:pointer;transition:border-color .2s,color .2s;}
+.bs:hover{border-color:var(--cl);color:var(--cl);}
+
+/* shared */
+section{padding:110px 60px;}
+.sl{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cu);margin-bottom:18px;}
+.sl::before{content:'';width:24px;height:1px;background:rgba(184,115,51,.5);}
+.st{font-family:var(--fd);font-size:clamp(34px,4.5vw,56px);font-weight:400;color:var(--cr);line-height:1.08;margin-bottom:52px;}
+.st em{font-style:italic;color:var(--cu);}
+.lead{font-size:17px;line-height:1.85;color:rgba(240,235,227,.72);max-width:640px;}
+
+/* hero */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 60px 90px;position:relative;overflow:hidden;}
+.hero-photo{position:absolute;top:0;right:0;bottom:0;width:44%;overflow:hidden;}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;transform:scale(1.06);transition:transform 1.8s cubic-bezier(.22,1,.36,1);}
+.hero-photo.loaded img{transform:scale(1);}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(13,31,53,.5) 25%,rgba(13,31,53,0) 60%),linear-gradient(0deg,rgba(13,31,53,.75) 0%,rgba(13,31,53,0) 30%);}
+.hero-sign{position:absolute;right:40px;bottom:36px;z-index:2;text-align:right;}
+.hero-sign b{display:block;font-family:var(--fd);font-size:22px;font-weight:400;color:var(--cr);}
+.hero-sign span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(240,235,227,.55);}
+.hero-content{position:relative;z-index:1;max-width:760px;}
+.hero-eye{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cu);margin-bottom:26px;animation:hU .9s .3s both;}
+.hero-eye::before{content:'';width:32px;height:1px;background:var(--cu);opacity:.5;}
+.hero-h1{font-family:var(--fd);font-size:clamp(46px,5.2vw,78px);font-weight:400;line-height:1.02;color:var(--cr);animation:hU .9s .45s both;}
+.hero-h1 em{font-style:italic;color:var(--cu);}
+.hero-sub{font-size:17px;line-height:1.8;color:rgba(240,235,227,.72);max-width:540px;margin:28px 0 0;animation:hU .9s .6s both;}
+.manif{font-family:var(--fd);font-style:italic;font-size:clamp(21px,2.2vw,26px);color:var(--crd);line-height:1.4;margin:30px 0 38px;padding-left:20px;border-left:2px solid var(--cu);max-width:520px;animation:hU .9s .75s both;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:hU .9s .9s both;}
+@keyframes hU{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+
+/* proofs */
+#preuves{padding:0 60px;background:var(--navy);}
+.proofs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(184,115,51,.15);border-bottom:1px solid rgba(184,115,51,.15);}
+.pf{padding:34px 26px;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(184,115,51,.12);}
+.pf:last-child{border-right:none;}
+.pf-n{font-family:var(--fd);font-size:38px;color:var(--cl);line-height:1;}
+.pf-l{font-size:12px;letter-spacing:1px;color:rgba(240,235,227,.6);line-height:1.5;}
+
+/* pourquoi */
+#pourquoi{background:var(--navy);}
+.why{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;}
+.why-txt p{font-size:17px;line-height:1.9;color:rgba(240,235,227,.72);margin-bottom:22px;}
+.why-txt p strong{color:var(--cr);font-weight:400;}
+.blocks{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 28px;}
+.blk{font-size:13px;letter-spacing:.5px;padding:9px 14px;border:1px solid rgba(184,115,51,.25);color:var(--crd);background:rgba(184,115,51,.05);}
+.why-img{aspect-ratio:4/5;overflow:hidden;position:relative;}
+.why-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1);}
+.why-img:hover img{transform:scale(1.04);}
+
+/* parcours */
+#parcours{background:var(--nl);}
+.tl{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:60px;}
+.tl::before{content:'';position:absolute;left:0;right:0;top:9px;height:1px;background:rgba(184,115,51,.25);}
+.tl-fill{position:absolute;left:0;top:9px;height:1px;width:0;background:var(--cl);transition:width 2.2s cubic-bezier(.22,1,.36,1);}
+.tl.in .tl-fill{width:100%;}
+.tl-step{position:relative;padding:34px 18px 0 0;}
+.tl-dot{position:absolute;top:2px;left:0;width:15px;height:15px;border-radius:50%;background:var(--nl);border:2px solid var(--cu);transition:background .4s;}
+.tl.in .tl-dot{background:var(--cu);}
+.tl-t{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--cr);margin-bottom:8px;}
+.tl-d{font-size:14px;line-height:1.7;color:rgba(240,235,227,.62);}
+.fmt-h{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cu);margin-bottom:16px;}
+.fmts{display:flex;flex-wrap:wrap;gap:10px;}
+.fmt{font-family:var(--fd);font-size:20px;padding:8px 18px;border:1px solid rgba(184,115,51,.25);color:var(--cr);transition:background .25s,border-color .25s,color .25s;cursor:default;}
+.fmt:hover{background:var(--cu);border-color:var(--cu);color:var(--navy);}
+.created{margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.cr-card{background:var(--navy);padding:28px 24px;}
+.cr-card b{display:block;font-family:var(--fd);font-size:23px;font-weight:600;color:var(--cr);margin-bottom:6px;}
+.cr-card span{font-size:13px;color:rgba(240,235,227,.55);}
+
+/* méthode */
+#methode{background:var(--navy);}
+.levers{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
+.lv{background:var(--nl);padding:36px 28px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;cursor:pointer;text-align:left;border:none;color:inherit;font-family:inherit;transition:background .3s;}
+.lv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cu),transparent);transform:scaleX(0);transition:transform .5s;}
+.lv:hover::before,.lv.open::before{transform:scaleX(1);}
+.lv:hover,.lv.open{background:#1b3150;}
+.lv-n{font-family:var(--fd);font-size:48px;font-weight:300;color:rgba(184,115,51,.3);line-height:1;}
+.lv-t{font-family:var(--fd);font-size:28px;font-weight:600;color:var(--cr);}
+.lv-d{font-size:14px;line-height:1.75;color:rgba(240,235,227,.65);}
+.lv-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease;}
+.lv-more>div{overflow:hidden;}
+.lv.open .lv-more,.lv:hover .lv-more{grid-template-rows:1fr;}
+.lv-more ul{list-style:none;padding-top:10px;border-top:1px solid rgba(184,115,51,.15);margin-top:4px;display:flex;flex-direction:column;gap:7px;}
+.lv-more li{font-size:13px;color:var(--crd);padding-left:14px;position:relative;}
+.lv-more li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--cu);}
+.lv-tog{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cu);margin-top:auto;}
+
+/* offres */
+#offres{background:var(--nl);}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
+.of{background:var(--navy);padding:40px 32px;display:flex;flex-direction:column;gap:16px;border:1px solid rgba(184,115,51,.12);position:relative;transition:transform .3s,border-color .3s;}
+.of:hover{transform:translateY(-4px);border-color:rgba(184,115,51,.4);}
+.of.feat{border-color:rgba(184,115,51,.45);}
+.of-badge{position:absolute;top:-12px;left:32px;background:var(--cu);color:var(--navy);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;}
+.of-for{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cu);}
+.of-name{font-family:var(--fd);font-size:34px;font-weight:600;color:var(--cr);line-height:1.05;}
+.of-title{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--crd);}
+.of-price{font-family:var(--fd);font-size:40px;color:var(--cl);line-height:1;margin-top:4px;}
+.of-price small{font-family:var(--fb);font-size:13px;color:rgba(240,235,227,.55);margin-left:4px;}
+.of-note{font-size:12px;color:rgba(240,235,227,.55);margin-top:-8px;}
+.of-d{font-size:14px;line-height:1.75;color:rgba(240,235,227,.68);}
+.of-key{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--cr);padding:12px 0 12px 16px;border-left:2px solid var(--cu);}
+.of ul{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;}
+.of li{font-size:13.5px;color:var(--crd);padding-left:16px;position:relative;line-height:1.5;}
+.of li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--cu);}
+.of .bp,.of .bs{margin-top:8px;}
+
+/* pour qui + bénéfices */
+#pourqui{background:var(--navy);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.who div{background:var(--nl);padding:22px 20px;font-family:var(--fd);font-size:21px;color:var(--cr);line-height:1.25;transition:background .25s;}
+.who div:hover{background:#1b3150;}
+.ben{display:flex;flex-direction:column;}
+.ben div{display:flex;align-items:center;gap:16px;padding:17px 0;border-bottom:1px solid rgba(184,115,51,.12);font-size:16px;color:rgba(240,235,227,.8);}
+.ben div::before{content:'→';color:var(--cu);font-size:16px;}
+
+/* diagnostic */
+#diagnostic{background:var(--nl);}
+.quiz{max-width:720px;margin:0 auto;}
+.qdots{display:flex;gap:8px;margin-bottom:40px;}
+.qd{width:7px;height:7px;border-radius:50%;background:rgba(184,115,51,.2);transition:all .3s;}
+.qd.done{background:rgba(184,115,51,.55);}
+.qd.active{width:24px;border-radius:4px;background:var(--cu);}
+.qp{display:none;animation:qIn .35s ease both;}
+.qp.on{display:block;}
+@keyframes qIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:none;}}
+.qq{font-family:var(--fd);font-size:clamp(24px,3.4vw,34px);color:var(--cr);line-height:1.15;margin-bottom:6px;}
+.qh{font-size:13px;color:rgba(240,235,227,.5);margin-bottom:26px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.opt{background:rgba(13,31,53,.55);border:1px solid rgba(184,115,51,.15);padding:18px;cursor:pointer;text-align:left;color:inherit;font-family:inherit;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,background .2s;}
+.opt:hover{border-color:rgba(184,115,51,.45);}
+.opt.sel{border-color:var(--cu);background:rgba(184,115,51,.1);}
+.opt b{font-size:15px;font-weight:400;color:var(--cr);}
+.opt span{font-size:12.5px;color:rgba(240,235,227,.5);line-height:1.4;}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px;}
+.qback{background:none;border:none;color:rgba(240,235,227,.45);font-family:inherit;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:10px 0;}
+.fld{display:flex;flex-direction:column;gap:7px;}
+.fld label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(184,115,51,.8);}
+.fld input,.fld textarea,.fld select{background:var(--navy);border:1px solid rgba(184,115,51,.2);color:var(--cr);font-family:var(--fb);font-size:15px;padding:13px 14px;outline:none;width:100%;transition:border-color .2s;}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--cl);}
+.fld textarea{min-height:110px;resize:vertical;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fgrid{display:flex;flex-direction:column;gap:14px;}
+.priv{font-size:12px;color:rgba(240,235,227,.45);line-height:1.5;}
+#qres{display:none;animation:qIn .5s ease both;}
+#qres.on{display:block;}
+.res-h{font-family:var(--fd);font-size:clamp(26px,3.4vw,36px);color:var(--cr);margin-bottom:8px;}
+.res-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cu);margin-bottom:16px;}
+.res-p{display:flex;flex-direction:column;gap:10px;margin:22px 0;}
+.res-p div{background:rgba(13,31,53,.55);border-left:2px solid var(--cu);padding:15px 18px;font-size:14.5px;line-height:1.65;color:rgba(240,235,227,.8);}
+.res-p b{color:var(--cl);font-weight:400;margin-right:6px;}
+.res-off{padding:20px;border:1px solid rgba(184,115,51,.3);margin-bottom:24px;font-size:14.5px;line-height:1.7;color:rgba(240,235,227,.75);}
+.res-off strong{font-family:var(--fd);font-size:22px;font-weight:600;color:var(--cr);display:block;margin-bottom:4px;}
+.res-cta{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* contact */
+#contact{background:var(--navy);}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;}
+.ct-txt p{font-size:17px;line-height:1.85;color:rgba(240,235,227,.72);margin-bottom:28px;}
+.ct-info{display:flex;flex-direction:column;gap:18px;margin-top:30px;}
+.ct-info div{display:flex;flex-direction:column;gap:4px;}
+.ct-info span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cu);}
+.ct-info a{color:var(--cr);text-decoration:none;font-size:16px;}
+.ct-info a:hover{color:var(--cl);}
+.sent{display:none;padding:18px;border:1px solid rgba(184,115,51,.3);background:rgba(184,115,51,.07);font-size:14px;line-height:1.6;}
+
+/* footer */
+footer{background:var(--nd);padding:56px 60px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:50px;border-top:1px solid rgba(184,115,51,.1);}
+.ft{font-size:13px;line-height:1.75;color:rgba(240,235,227,.5);max-width:280px;margin-top:16px;}
+.fh{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(184,115,51,.7);margin-bottom:14px;}
+.fl{display:flex;flex-direction:column;gap:10px;}
+.fl a,.fl span{font-size:13px;color:rgba(240,235,227,.55);text-decoration:none;}
+.fl a:hover{color:var(--cl);}
+.fcp{grid-column:1/-1;padding-top:24px;border-top:1px solid rgba(184,115,51,.08);display:flex;justify-content:space-between;font-size:11px;color:rgba(240,235,227,.3);}
+
+/* mobile bar */
+.mbar{display:none;}
+
+@media (max-width:1100px){
+  section{padding:90px 32px;}
+  #preuves{padding:0 32px;}
+  #nav,#nav.solid{padding-left:24px;padding-right:24px;}
+  #hero{padding:120px 32px 80px;}
+  .nav-links{gap:20px;}
+  .levers{grid-template-columns:1fr 1fr;}
+  .tl{grid-template-columns:repeat(3,1fr);row-gap:30px;}
+  .tl::before,.tl-fill{display:none;}
+  footer{padding:48px 32px;}
+}
+@media (max-width:860px){
+  .nav-links{display:none;}
+  .burger{display:flex;}
+  #nav,#nav.solid{padding:10px 18px;}
+  .logo-a svg{width:118px;height:50px;}
+  .menu-open #nav{background:transparent;border-bottom-color:transparent;}
+  #hero{min-height:auto;justify-content:flex-start;padding:52vh 20px 56px;padding-top:52svh;}
+  .hero-photo{width:100%;bottom:auto;height:66vh;height:66svh;}
+  .hero-photo img{object-position:center 18%;}
+  .hero-photo::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(13,31,53,.6) 25%,rgba(13,31,53,0) 55%),linear-gradient(180deg,rgba(13,31,53,.7) 0%,rgba(13,31,53,0) 20%);}
+  .hero-sign{display:none;}
+  .hero-eye{font-size:11px;letter-spacing:2.5px;}
+  .hero-eye::before{display:none;}
+  .hero-h1{font-size:42px;}
+  .hero-sub{font-size:16px;}
+  .manif{font-size:20px;margin:24px 0 30px;}
+  .hero-actions{flex-direction:column;}
+  .bp,.bs{min-height:52px;width:100%;}
+  section{padding:68px 20px;}
+  #preuves{padding:0;}
+  .proofs{grid-template-columns:1fr 1fr;}
+  .pf{padding:24px 20px;border-bottom:1px solid rgba(184,115,51,.12);}
+  .pf:nth-child(2n){border-right:none;}
+  .pf-n{font-size:30px;}
+  .st{margin-bottom:36px;}
+  .lead,.why-txt p,.ct-txt p{font-size:16px;}
+  .why,.two,.ct{grid-template-columns:1fr;gap:40px;}
+  .why-img{aspect-ratio:4/3;}
+  .tl{grid-template-columns:1fr;row-gap:0;padding-left:26px;border-left:1px solid rgba(184,115,51,.3);margin-left:7px;}
+  .tl-step{padding:0 0 28px;}
+  .tl-dot{left:-34px;top:4px;background:var(--cu);}
+  .created{grid-template-columns:1fr;}
+  .fmt{font-size:18px;padding:7px 14px;}
+  .levers{grid-template-columns:1fr;}
+  .lv:hover .lv-more{grid-template-rows:0fr;}
+  .lv.open .lv-more{grid-template-rows:1fr;}
+  .offers{grid-template-columns:1fr;gap:28px;}
+  .of{padding:34px 22px;}
+  .who{grid-template-columns:1fr 1fr;}
+  .who div{font-size:18px;padding:18px 14px;}
+  .opts,.frow{grid-template-columns:1fr;}
+  .fld input,.fld textarea,.fld select{font-size:16px;min-height:50px;}
+  .qnav .bp{width:auto;flex:1;}
+  .res-cta{flex-direction:column;}
+  footer{grid-template-columns:1fr;gap:30px;padding:46px 20px 110px;}
+  .fcp{flex-direction:column;gap:8px;}
+  .mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:180;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(13,31,53,.96);backdrop-filter:blur(16px);border-top:1px solid rgba(184,115,51,.2);transform:translateY(110%);transition:transform .35s cubic-bezier(.22,1,.36,1);}
+  .mbar.on{transform:none;}
+  .mbar a{flex:1;padding:14px 8px;min-height:48px;width:auto;}
+  .menu-open .mbar{transform:translateY(110%);}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo-a" href="#" aria-label="Sklaer Conseil, retour en haut" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <svg viewBox="0 0 160 62" width="160" height="62" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+      <defs>
+        <radialGradient id="g1" cx="35%" cy="35%"><stop offset="0%" stop-color="#C9894A"/><stop offset="100%" stop-color="#B87333"/></radialGradient>
+        <radialGradient id="g3" cx="35%" cy="35%"><stop offset="0%" stop-color="#D9A06A"/><stop offset="100%" stop-color="#C9894A"/></radialGradient>
+      </defs>
+      <line x1="15" y1="45" x2="28" y2="28" stroke="rgba(184,115,51,.38)" stroke-width="1"/>
+      <line x1="28" y1="28" x2="45" y2="10" stroke="rgba(184,115,51,.38)" stroke-width="1"/>
+      <circle class="lm-c1" cx="11" cy="48" r="5.5" fill="url(#g1)" opacity=".42"/>
+      <circle class="lm-c2" cx="25" cy="30" r="7.5" fill="url(#g1)" opacity=".72"/>
+      <circle class="lm-c3" cx="43" cy="11" r="10" fill="url(#g3)"/>
+      <line x1="65" y1="8" x2="65" y2="54" stroke="rgba(184,115,51,.26)" stroke-width=".8"/>
+      <text x="76" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="27" font-weight="400" letter-spacing="6" fill="#F0EBE3">SKLAER</text>
+      <text x="78" y="51" font-family="'Cormorant Garamond',Georgia,serif" font-size="9" font-weight="300" letter-spacing="5" fill="#B87333">CONSEIL</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#pourquoi">Pourquoi</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#methode">Méthode</a>
+    <a href="#offres">Offres</a>
+    <a href="#diagnostic">Diagnostic</a>
+    <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="nav-cta">Réserver un appel</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+</nav>
+<div class="mnav" id="mnav" aria-hidden="true">
+  <a href="#pourquoi">Pourquoi</a>
+  <a href="#parcours">Parcours</a>
+  <a href="#methode">Méthode</a>
+  <a href="#offres">Offres</a>
+  <a href="#diagnostic">Diagnostic</a>
+  <a href="#contact">Contact</a>
+  <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp">Réserver un appel découverte</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-photo" id="hero-photo"><img src="cedric.jpg" alt="Cédric Gicquel, fondateur de Sklaer Conseil" width="721" height="855" fetchpriority="high"></div>
+  <div class="hero-sign"><b>Cédric Gicquel</b><span>Fondateur · Sklaer Conseil</span></div>
+  <div class="hero-content">
+    <p class="hero-eye">30 ans de terrain dans le CHR</p>
+    <h1 class="hero-h1">Reprenez <em>les commandes</em><br>de votre établissement</h1>
+    <p class="hero-sub">J'accompagne les dirigeants CHR pour remettre de la clarté, de la méthode et du souffle dans leur établissement.</p>
+    <p class="manif">« Diriger un établissement ne devrait pas signifier tout porter seul. »</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp">Réserver un appel découverte</a>
+      <a href="#offres" class="bs">Découvrir les offres</a>
+    </div>
+  </div>
+</section>
+
+<!-- PREUVES -->
+<section id="preuves" aria-label="Repères">
+  <div class="proofs">
+    <div class="pf reveal d1"><span class="pf-n">30 ans</span><span class="pf-l">De terrain CHR, de barman à directeur</span></div>
+    <div class="pf reveal d2"><span class="pf-n">23 % → 5 %</span><span class="pf-l">Turnover d'équipe dans le dernier établissement dirigé</span></div>
+    <div class="pf reveal d3"><span class="pf-n">Top 1 %</span><span class="pf-l">TripAdvisor 2025 pour l'établissement dirigé</span></div>
+    <div class="pf reveal d4"><span class="pf-n">UMIH</span><span class="pf-l">Prix national 2025</span></div>
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section id="pourquoi">
+  <p class="sl reveal">Pourquoi Sklaer Conseil</p>
+  <h2 class="st reveal">Les mêmes blocages,<br><em>dans tous les établissements.</em></h2>
+  <div class="why">
+    <div class="why-txt">
+      <p class="reveal">Après trente ans dans la restauration, j'ai vu les mêmes difficultés revenir, quel que soit le format : la brasserie de centre-ville, le bar de nuit, l'hôtel de bord de mer ou la table gastronomique.</p>
+      <div class="blocks reveal">
+        <span class="blk">Solitude du dirigeant</span>
+        <span class="blk">Surcharge mentale</span>
+        <span class="blk">Manque de recul</span>
+        <span class="blk">Fatigue décisionnelle</span>
+      </div>
+      <p class="reveal">Le dirigeant est partout, tout le temps. Il éteint les incendies, remplace l'absent, répond au fournisseur. Et le travail de fond attend toujours. <strong>Ce n'est pas un manque de compétence. C'est un manque d'appui.</strong></p>
+      <p class="reveal">Sklaer Conseil existe pour ça : remettre de la clarté, de la structure et du souffle. Je ne prends la place de personne. Je suis votre copilote : je vous aide à voir clair, à décider et à reprendre les commandes.</p>
+    </div>
+    <div class="why-img reveal">
+      <img src="champagne.jpg" alt="Service au bar : bouteille de champagne et deux verres sur un comptoir en bois" loading="lazy" width="1200" height="1487">
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours">
+  <p class="sl reveal">Parcours</p>
+  <h2 class="st reveal">J'ai tenu chaque poste<br><em>que je vous aide à piloter.</em></h2>
+  <p class="lead reveal" style="margin-bottom:56px">Je ne vous parle pas d'un métier que j'ai étudié. Je vous parle d'un métier que j'ai fait, en salle, au bar, en cuisine et en direction, depuis l'âge de 17 ans.</p>
+  <div class="tl" id="tl">
+    <div class="tl-fill"></div>
+    <div class="tl-step"><span class="tl-dot"></span><p class="tl-t">Barman</p><p class="tl-d">Le comptoir, le rush, le client qui attend. La base de tout.</p></div>
+    <div class="tl-step"><span class="tl-dot"></span><p class="tl-t">Responsable de bar</p><p class="tl-d">Former une équipe, écrire les standards, accueillir une clientèle exigeante.</p></div>
+    <div class="tl-step"><span class="tl-dot"></span><p class="tl-t">Nuit & événementiel</p><p class="tl-d">Bars de nuit, discothèque, soirées, programmation d'artistes.</p></div>
+    <div class="tl-step"><span class="tl-dot"></span><p class="tl-t">Salle gastronomique</p><p class="tl-d">L'exigence du service à table, la précision, le détail.</p></div>
+    <div class="tl-step"><span class="tl-dot"></span><p class="tl-t">Directeur</p><p class="tl-d">Chiffres, équipes, décisions. Toute la maison sur les épaules.</p></div>
+  </div>
+  <p class="fmt-h reveal">Tous les formats</p>
+  <div class="fmts reveal">
+    <span class="fmt">Bar</span><span class="fmt">Bar de nuit</span><span class="fmt">Boîte de nuit</span><span class="fmt">Brasserie</span><span class="fmt">Crêperie</span><span class="fmt">Pizzeria</span><span class="fmt">Hôtel</span><span class="fmt">Gastronomique</span>
+  </div>
+  <div class="created">
+    <div class="cr-card reveal d1"><b>Restaurant-concert</b><span>Créé et dirigé</span></div>
+    <div class="cr-card reveal d2"><b>Guinguette</b><span>Créée et dirigée</span></div>
+    <div class="cr-card reveal d3"><b>Bar de nuit</b><span>Créé et dirigé</span></div>
+  </div>
+</section>
+
+<!-- MÉTHODE -->
+<section id="methode">
+  <p class="sl reveal">La méthode</p>
+  <h2 class="st reveal">Quatre leviers.<br><em>Dans cet ordre.</em></h2>
+  <div class="levers">
+    <button class="lv reveal d1" aria-expanded="false">
+      <span class="lv-n">01</span><span class="lv-t">Prioriser</span>
+      <span class="lv-d">Trancher ce qui attend depuis des semaines. On sort de la dispersion pour se concentrer sur ce qui compte vraiment.</span>
+      <span class="lv-more"><div><ul><li>Lister tout ce qui est en suspens</li><li>Choisir les trois sujets qui pèsent le plus</li><li>Abandonner le reste, sans culpabilité</li></ul></div></span>
+      <span class="lv-tog">Concrètement +</span>
+    </button>
+    <button class="lv reveal d2" aria-expanded="false">
+      <span class="lv-n">02</span><span class="lv-t">Structurer</span>
+      <span class="lv-d">Écrire le « comment on fait ». Des standards simples, des rôles clairs, des repères partagés par toute l'équipe.</span>
+      <span class="lv-more"><div><ul><li>Qui fait quoi, à quel moment du service</li><li>Standards d'accueil et de service</li><li>Quelques chiffres suivis chaque semaine</li></ul></div></span>
+      <span class="lv-tog">Concrètement +</span>
+    </button>
+    <button class="lv reveal d3" aria-expanded="false">
+      <span class="lv-n">03</span><span class="lv-t">Former</span>
+      <span class="lv-d">Sur le terrain, pendant le service. Pour que l'équipe gagne en autonomie et que vous ne soyez plus le seul pilier.</span>
+      <span class="lv-more"><div><ul><li>Formation en situation réelle</li><li>Faire monter des relais de confiance</li><li>Une équipe qui conseille, pas qui « pousse »</li></ul></div></span>
+      <span class="lv-tog">Concrètement +</span>
+    </button>
+    <button class="lv reveal d4" aria-expanded="false">
+      <span class="lv-n">04</span><span class="lv-t">Soutenir</span>
+      <span class="lv-d">Un regard extérieur, calme et expérimenté, quand les décisions pèsent. Pour ne plus décider seul à minuit.</span>
+      <span class="lv-more"><div><ul><li>Points réguliers avec le dirigeant</li><li>Aide à la décision sur les sujets lourds</li><li>Un interlocuteur qui connaît votre maison</li></ul></div></span>
+      <span class="lv-tog">Concrètement +</span>
+    </button>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres">
+  <p class="sl reveal">Les offres</p>
+  <h2 class="st reveal">Trois formats.<br><em>Un seul objectif : que vous repreniez la main.</em></h2>
+  <div class="offers">
+    <article class="of feat reveal d1">
+      <span class="of-badge">Le plus rapide</span>
+      <span class="of-for">Établissement qui a perdu ses repères</span>
+      <h3 class="of-name">Journée Terrain</h3>
+      <p class="of-title">Diagnostic terrain & plan d'action immédiat</p>
+      <p class="of-price">900 €<small>HT / journée</small></p>
+      <p class="of-key">Je viens, j'analyse, je tranche, je cadre l'action.</p>
+      <p class="of-d">Pour les établissements qui sentent que quelque chose ne tourne plus rond. Vous repartez le soir avec un diagnostic clair et trois priorités applicables tout de suite.</p>
+      <ul><li>Observation en service, salle et cuisine</li><li>Diagnostic clair, sans jargon</li><li>Trois priorités et un plan d'action</li><li>Résultat garanti ou pas de facture</li></ul>
+      <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp">Réserver une Journée Terrain</a>
+    </article>
+    <article class="of reveal d2">
+      <span class="of-for">Créateurs & repreneurs</span>
+      <h3 class="of-name">Trimestre Pilote</h3>
+      <p class="of-title">Accompagnement création / reprise</p>
+      <p class="of-price">3 900 €<small>HT</small></p>
+      <p class="of-note">Paiement en 2 ou 3 fois possible</p>
+      <p class="of-d">Pour partir sur des bases saines, de l'achat aux premiers chiffres. Trois mois d'accompagnement de A à Z.</p>
+      <ul><li>Cadrage du projet</li><li>Étude de marché</li><li>Business plan</li><li>Structuration opérationnelle</li><li>Premières étapes d'exploitation</li></ul>
+      <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp">Réserver un appel</a>
+    </article>
+    <article class="of reveal d3">
+      <span class="of-for">Dirigeants installés</span>
+      <h3 class="of-name">Suivi Mensuel</h3>
+      <p class="of-title">Copilotage dirigeant sur mesure</p>
+      <p class="of-price" style="font-size:32px">Sur devis</p>
+      <p class="of-note">Selon la taille de l'établissement, le niveau d'accompagnement et le chiffre d'affaires</p>
+      <p class="of-key">Je reste à vos côtés pour vous aider à piloter dans le temps.</p>
+      <p class="of-d">Ce n'est pas un diagnostic ponctuel : c'est une présence, du recul et une aide à la décision dans la durée.</p>
+      <ul><li>Accompagnement personnalisé</li><li>Aide à la décision</li><li>Organisation et management</li><li>Rapport mensuel d'une page</li></ul>
+      <a href="#contact" class="bs">Demander un échange</a>
+    </article>
+  </div>
+</section>
+
+<!-- POUR QUI / CE QUE ÇA CHANGE -->
+<section id="pourqui">
+  <div class="two">
+    <div>
+      <p class="sl reveal">Pour qui</p>
+      <h2 class="st reveal" style="margin-bottom:32px">Vous vous<br><em>reconnaîtrez.</em></h2>
+      <div class="who reveal">
+        <div>Créateurs</div><div>Repreneurs</div>
+        <div>Restaurateurs déjà installés</div><div>Dirigeants isolés</div>
+        <div>Établissements en perte de repères</div><div>Équipes à recadrer ou à rendre autonomes</div>
+      </div>
+    </div>
+    <div>
+      <p class="sl reveal">Ce que ça change</p>
+      <h2 class="st reveal" style="margin-bottom:32px">Pas de miracle.<br><em>De la méthode.</em></h2>
+      <div class="ben reveal">
+        <div>Plus de clarté</div><div>Moins de charge mentale</div><div>Des décisions plus lucides</div>
+        <div>Une organisation plus stable</div><div>Une équipe mieux cadrée</div><div>De l'énergie retrouvée</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC -->
+<section id="diagnostic">
+  <div class="quiz">
+    <p class="sl reveal">Diagnostic gratuit · 2 minutes</p>
+    <h2 class="st reveal" style="margin-bottom:34px">Par où commencer ?<br><em>Trois questions pour y voir clair.</em></h2>
+    <div class="qdots" id="qdots"><span class="qd active"></span><span class="qd"></span><span class="qd"></span><span class="qd"></span></div>
+
+    <div class="qp on" id="qp1">
+      <p class="qq">Où en est votre établissement ?</p>
+      <p class="qh">Choisissez la situation la plus proche.</p>
+      <div class="opts" data-q="situation">
+        <button class="opt" data-v="creation"><b>Création ou reprise</b><span>Projet en cours ou ouverture récente</span></button>
+        <button class="opt" data-v="installe"><b>Installé, ça tourne</b><span>Mais je sens que ça pourrait aller mieux</span></button>
+        <button class="opt" data-v="difficulte"><b>En difficulté</b><span>Quelque chose ne tourne plus rond</span></button>
+        <button class="opt" data-v="croissance"><b>En croissance</b><span>Plusieurs sites ou un nouveau cap à passer</span></button>
+      </div>
+      <div class="qnav"><span></span><button class="bp" data-next="2" disabled>Suivant →</button></div>
+    </div>
+
+    <div class="qp" id="qp2">
+      <p class="qq">Qu'est-ce qui pèse le plus aujourd'hui ?</p>
+      <p class="qh">Un seul choix : le plus lourd.</p>
+      <div class="opts" data-q="poids">
+        <button class="opt" data-v="partout"><b>Je suis partout</b><span>Je gère tout, et le fond n'avance jamais</span></button>
+        <button class="opt" data-v="equipe"><b>Mon équipe</b><span>Elle tourne, ou elle dépend trop de moi</span></button>
+        <button class="opt" data-v="marge"><b>Ma marge</b><span>Ça travaille, mais il ne reste pas grand-chose</span></button>
+        <button class="opt" data-v="cap"><b>Mon cap</b><span>Je ne sais plus par où commencer</span></button>
+      </div>
+      <div class="qnav"><button class="qback" data-prev="1">← Retour</button><button class="bp" data-next="3" disabled>Suivant →</button></div>
+    </div>
+
+    <div class="qp" id="qp3">
+      <p class="qq">Combien d'heures par semaine passez-vous dans l'établissement ?</p>
+      <p class="qh">Une estimation honnête suffit.</p>
+      <div class="opts" data-q="heures">
+        <button class="opt" data-v="50"><b>Moins de 50 h</b><span>J'ai encore du temps pour prendre du recul</span></button>
+        <button class="opt" data-v="60"><b>50 à 60 h</b><span>C'est intense, mais tenable</span></button>
+        <button class="opt" data-v="70"><b>60 à 70 h</b><span>Je n'ai plus de temps pour le fond</span></button>
+        <button class="opt" data-v="80"><b>Plus de 70 h</b><span>Je suis à bout de souffle</span></button>
+      </div>
+      <div class="qnav"><button class="qback" data-prev="2">← Retour</button><button class="bp" data-next="4" disabled>Suivant →</button></div>
+    </div>
+
+    <div class="qp" id="qp4">
+      <p class="qq">Où vous envoyer votre diagnostic ?</p>
+      <p class="qh">Vos réponses restent entre nous. Aucune relance agressive.</p>
+      <div class="fgrid">
+        <div class="frow">
+          <div class="fld"><label for="q-prenom">Prénom</label><input id="q-prenom" type="text" autocomplete="given-name"></div>
+          <div class="fld"><label for="q-etab">Établissement</label><input id="q-etab" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="fld"><label for="q-email">Email</label><input id="q-email" type="email" autocomplete="email"></div>
+        <div class="fld"><label for="q-tel">Téléphone (facultatif)</label><input id="q-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="qnav"><button class="qback" data-prev="3">← Retour</button><button class="bp" id="q-go" disabled>Voir mes priorités →</button></div>
+    </div>
+
+    <div id="qres" aria-live="polite">
+      <p class="res-tag" id="r-tag"></p>
+      <p class="res-h" id="r-h"></p>
+      <div class="res-p" id="r-p"></div>
+      <div class="res-off" id="r-off"></div>
+      <div class="res-cta">
+        <a href="https://calendly.com/sklaer-conseil/30min" id="r-cal" target="_blank" rel="noopener" class="bp">Réserver un appel découverte</a>
+        <button class="bs" id="r-reset">Recommencer</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ct">
+    <div class="ct-txt">
+      <p class="sl reveal">Contact</p>
+      <h2 class="st reveal" style="margin-bottom:28px">Parlons-en.</h2>
+      <p class="reveal">Si vous sentez que votre établissement peut aller plus loin, mais que vous ne savez plus par où commencer, parlons-en. Trente minutes, sans engagement, pour poser les choses à plat.</p>
+      <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp reveal">Réserver un appel découverte de 30 min</a>
+      <div class="ct-info reveal">
+        <div><span>Téléphone</span><a href="tel:+33685959362">06 85 95 93 62</a></div>
+        <div><span>Email</span><a href="mailto:sklaerconseil@gmail.com">sklaerconseil@gmail.com</a></div>
+        <div><span>Zone</span><a href="#contact" style="pointer-events:none">Bretagne, et au-delà sur demande</a></div>
+      </div>
+    </div>
+    <form class="fgrid reveal" id="cform">
+      <div class="frow">
+        <div class="fld"><label for="c-nom">Prénom et nom</label><input id="c-nom" type="text" required autocomplete="name"></div>
+        <div class="fld"><label for="c-etab">Établissement</label><input id="c-etab" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="frow">
+        <div class="fld"><label for="c-email">Email</label><input id="c-email" type="email" required autocomplete="email"></div>
+        <div class="fld"><label for="c-tel">Téléphone</label><input id="c-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="fld"><label for="c-objet">Votre situation</label>
+        <select id="c-objet"><option>Établissement installé</option><option>Création ou reprise</option><option>Établissement en difficulté</option><option>Autre</option></select>
+      </div>
+      <div class="fld"><label for="c-msg">Message</label><textarea id="c-msg" placeholder="Quelques mots sur votre établissement et ce qui vous pèse aujourd'hui."></textarea></div>
+      <div class="sent" id="c-sent">Merci, votre message est bien parti. Je vous réponds personnellement sous 48 h.</div>
+      <button type="submit" class="bp">Envoyer un message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <svg viewBox="0 0 160 62" width="130" height="50" xmlns="http://www.w3.org/2000/svg" overflow="visible" aria-label="Sklaer Conseil">
+      <circle cx="11" cy="48" r="5.5" fill="#B87333" opacity=".42"/><circle cx="25" cy="30" r="7.5" fill="#B87333" opacity=".72"/><circle cx="43" cy="11" r="10" fill="#C9894A"/>
+      <line x1="65" y1="8" x2="65" y2="54" stroke="rgba(184,115,51,.26)" stroke-width=".8"/>
+      <text x="76" y="38" font-family="'Cormorant Garamond',Georgia,serif" font-size="27" letter-spacing="6" fill="#F0EBE3">SKLAER</text>
+      <text x="78" y="51" font-family="'Cormorant Garamond',Georgia,serif" font-size="9" letter-spacing="5" fill="#B87333">CONSEIL</text>
+    </svg>
+    <p class="ft">Accompagnement terrain pour dirigeants CHR. Audit restaurant, création et reprise, pilotage au quotidien.</p>
+  </div>
+  <div>
+    <p class="fh">Groupe Sklaer</p>
+    <div class="fl">
+      <span>Sklaer Conseil (ce site)</span>
+      <a href="https://sklaer-media.vercel.app" target="_blank" rel="noopener">Sklaer Média →</a>
+      <span>Sklaer Pilot (bientôt)</span>
+    </div>
+  </div>
+  <div>
+    <p class="fh">Navigation</p>
+    <div class="fl">
+      <a href="#methode">Méthode</a><a href="#offres">Offres</a><a href="#diagnostic">Diagnostic gratuit</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="fcp"><span>© 2026 Sklaer Conseil · Cédric Gicquel</span><span>Consultant CHR · Bretagne</span></div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="https://calendly.com/sklaer-conseil/30min" target="_blank" rel="noopener" class="bp">Réserver un appel</a>
+  <a href="#diagnostic" class="bs">Diagnostic</a>
+</div>
+
+<script>
+const CE = 'sklaerconseil@gmail.com';
+const CAL = 'https://calendly.com/sklaer-conseil/30min';
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* nav */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* menu */
+const burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
+function setMenu(open){ document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', open); mnav.setAttribute('aria-hidden', !open); }
+burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+/* hero photo */
+const hph = document.getElementById('hero-photo'), himg = hph.querySelector('img');
+himg.complete ? hph.classList.add('loaded') : himg.addEventListener('load', () => hph.classList.add('loaded'));
+if (!reduceMotion) {
+  let tk = false;
+  window.addEventListener('scroll', () => {
+    if (tk) return; tk = true;
+    requestAnimationFrame(() => { const y = window.scrollY; if (y < innerHeight) himg.style.transform = `translateY(${y * .1}px)`; tk = false; });
+  }, {passive:true});
+}
+
+/* reveal */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
+document.querySelectorAll('.reveal,#tl').forEach(el => io.observe(el));
+
+/* levers: tap to open (mobile), hover on desktop */
+document.querySelectorAll('.lv').forEach(lv => lv.addEventListener('click', () => {
+  const open = !lv.classList.contains('open');
+  lv.classList.toggle('open', open); lv.setAttribute('aria-expanded', open);
+  lv.querySelector('.lv-tog').textContent = open ? 'Refermer −' : 'Concrètement +';
+}));
+
+/* mobile bar */
+const mbar = document.getElementById('mbar');
+const zones = ['diagnostic','contact'].map(id => document.getElementById(id));
+const upBar = () => {
+  const past = scrollY > innerHeight * .7;
+  const inZone = zones.some(z => { const r = z.getBoundingClientRect(); return r.top < innerHeight * .8 && r.bottom > 0; });
+  mbar.classList.toggle('on', past && !inZone);
+};
+window.addEventListener('scroll', upBar, {passive:true}); upBar();
+
+/* diagnostic */
+const ans = {};
+const quiz = document.getElementById('diagnostic');
+function dots(n){ document.querySelectorAll('.qd').forEach((d,i) => { d.className = 'qd' + (i+1 < n ? ' done' : i+1 === n ? ' active' : ''); }); }
+function goQ(n){
+  document.querySelectorAll('.qp').forEach(p => p.classList.remove('on'));
+  document.getElementById('qp' + n).classList.add('on'); dots(n);
+  quiz.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
+}
+document.querySelectorAll('.opts').forEach(g => g.querySelectorAll('.opt').forEach(o => o.addEventListener('click', () => {
+  g.querySelectorAll('.opt').forEach(x => x.classList.remove('sel')); o.classList.add('sel');
+  ans[g.dataset.q] = o.dataset.v;
+  o.closest('.qp').querySelector('[data-next]').disabled = false;
+})));
+document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => goQ(+b.dataset.next)));
+document.querySelectorAll('[data-prev]').forEach(b => b.addEventListener('click', () => goQ(+b.dataset.prev)));
+const qEmail = document.getElementById('q-email'), qGo = document.getElementById('q-go');
+qEmail.addEventListener('input', () => qGo.disabled = !/\S+@\S+\.\S+/.test(qEmail.value));
+
+const PRIO = {
+  partout: ['Lister tout ce qui dépend de vous seul, et choisir ce qui peut être confié dès ce mois-ci.', 'Bloquer deux créneaux fixes par semaine, hors service, réservés au pilotage.', 'Désigner un relais par service, avec un périmètre clair.'],
+  equipe:  ['Écrire noir sur blanc « qui fait quoi » à chaque moment du service.', 'Identifier les deux personnes à faire monter en responsabilité.', 'Remplacer les consignes orales répétées par trois standards simples et affichés.'],
+  marge:   ['Suivre chaque semaine le ticket moyen par service, pas seulement le chiffre d\'affaires.', 'Vérifier le coût matière de vos cinq plats les plus vendus.', 'Comparer les heures travaillées au chiffre de chaque service.'],
+  cap:     ['Poser en une page ce que vous voulez que votre établissement soit dans un an.', 'Trier vos sujets en trois colonnes : maintenant, plus tard, jamais.', 'Choisir un seul chantier prioritaire pour les trente prochains jours.']
+};
+const OFFER = {
+  creation:   ['Trimestre Pilote', 'Pour poser des bases saines dès le départ : cadrage, étude de marché, business plan et premières étapes d\'exploitation.'],
+  difficulte: ['Journée Terrain', 'Une journée sur place pour poser un diagnostic clair et repartir le soir avec trois priorités et un plan d\'action.'],
+  installe:   ['Journée Terrain, puis Suivi Mensuel', 'Commencer par un diagnostic sur place, puis un copilotage régulier pour que les changements tiennent dans le temps.'],
+  croissance: ['Suivi Mensuel', 'Un copilotage régulier pour structurer la croissance sans vous épuiser.']
+};
+const TAG = { '50':'Charge maîtrisée', '60':'Charge élevée', '70':'Surcharge', '80':'Alerte surcharge' };
+
+qGo.addEventListener('click', () => {
+  const p = document.getElementById('q-prenom').value.trim(), et = document.getElementById('q-etab').value.trim();
+  const em = qEmail.value.trim(), tel = document.getElementById('q-tel').value.trim();
+  const off = OFFER[ans.situation] || OFFER.installe;
+  document.getElementById('r-tag').textContent = TAG[ans.heures] || '';
+  document.getElementById('r-h').textContent = (p ? p + ', voici' : 'Voici') + ' vos trois priorités';
+  document.getElementById('r-p').innerHTML = (PRIO[ans.poids] || PRIO.cap).map((t,i) => `<div><b>${i+1}.</b>${t}</div>`).join('');
+  document.getElementById('r-off').innerHTML = `<strong>Le format adapté : ${off[0]}</strong>${off[1]}`;
+  document.getElementById('r-cal').href = `${CAL}?name=${encodeURIComponent(p)}&email=${encodeURIComponent(em)}&a1=${encodeURIComponent(et)}`;
+  document.querySelectorAll('.qp').forEach(x => x.classList.remove('on'));
+  document.getElementById('qdots').style.display = 'none';
+  document.getElementById('qres').classList.add('on');
+  quiz.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
+  fetch('https://formsubmit.co/ajax/' + CE, {
+    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify({_subject:`Diagnostic Sklaer Conseil — ${et || p || 'Nouveau contact'}`, Prénom:p, Établissement:et, Email:em, Téléphone:tel || '—',
+      Situation:ans.situation, 'Ce qui pèse':ans.poids, 'Heures / semaine':ans.heures, 'Offre suggérée':off[0], Date:new Date().toLocaleString('fr-FR')})
+  }).catch(() => {});
+});
+document.getElementById('r-reset').addEventListener('click', () => {
+  Object.keys(ans).forEach(k => delete ans[k]);
+  document.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
+  document.querySelectorAll('[data-next]').forEach(b => b.disabled = true);
+  document.getElementById('qres').classList.remove('on');
+  document.getElementById('qdots').style.display = 'flex';
+  goQ(1);
+});
+
+/* contact form */
+document.getElementById('cform').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = this.querySelector('button[type=submit]'); btn.textContent = 'Envoi…'; btn.disabled = true;
+  try {
+    await fetch('https://formsubmit.co/ajax/' + CE, {
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify({_subject:`Contact Sklaer Conseil — ${document.getElementById('c-etab').value || document.getElementById('c-nom').value}`,
+        Nom:document.getElementById('c-nom').value, Établissement:document.getElementById('c-etab').value, Email:document.getElementById('c-email').value,
+        Téléphone:document.getElementById('c-tel').value, Situation:document.getElementById('c-objet').value, Message:document.getElementById('c-msg').value, Date:new Date().toLocaleString('fr-FR')})
+    });
+  } catch(err) {}
+  document.getElementById('c-sent').style.display = 'block'; btn.style.display = 'none';
+});
+</script>
+</body>
+</html>
