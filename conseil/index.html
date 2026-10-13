@@ -110,6 +110,20 @@ section{padding:110px 60px;}
 .why-img{aspect-ratio:4/5;overflow:hidden;position:relative;}
 .why-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1);}
 .why-img:hover img{transform:scale(1.04);}
+.img-cap{position:absolute;left:0;right:0;bottom:0;padding:50px 20px 18px;background:linear-gradient(0deg,rgba(13,31,53,.9),transparent);font-family:var(--fd);font-style:italic;font-size:18px;color:var(--cr);}
+.award{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--navy);}
+.award-img{position:relative;overflow:hidden;aspect-ratio:4/3;}
+.award-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%;transition:transform 1.2s cubic-bezier(.22,1,.36,1);}
+.award:hover .award-img img{transform:scale(1.04);}
+.award-txt{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;gap:18px;}
+.award-txt .award-t{font-family:var(--fd);font-size:34px;color:var(--cr);line-height:1.1;}
+.award-t em{color:var(--cu);}
+.award-txt p{font-size:15px;line-height:1.8;color:rgba(240,235,227,.68);}
+.award-list{display:flex;flex-direction:column;gap:10px;}
+.award-list div{display:flex;gap:14px;align-items:baseline;padding-bottom:10px;border-bottom:1px solid rgba(184,115,51,.12);}
+.award-list b{font-family:var(--fd);font-size:24px;font-weight:400;color:var(--cl);min-width:118px;}
+.award-list span{font-size:14px;color:rgba(240,235,227,.7);}
+@media (max-width:860px){.award{grid-template-columns:1fr;}.award-img{min-height:0;aspect-ratio:4/3;}.award-txt{padding:30px 22px;}.award-txt .award-t{font-size:28px;}.award-list b{min-width:96px;font-size:21px;}}
 
 /* parcours */
 #parcours{background:var(--nl);}
@@ -392,7 +406,8 @@ footer{background:var(--nd);padding:56px 60px;display:grid;grid-template-columns
       <p class="reveal">Sklaer Conseil existe pour ça : remettre de la clarté, de la structure et du souffle. Je ne prends la place de personne. Je suis votre copilote : je vous aide à voir clair, à décider et à reprendre les commandes.</p>
     </div>
     <div class="why-img reveal">
-      <img src="champagne.jpg" alt="Service au bar : bouteille de champagne et deux verres sur un comptoir en bois" loading="lazy" width="1200" height="1487">
+      <img src="gare.jpg" alt="Grand hall de gare sous verrière, l'horloge au-dessus de la foule en mouvement — photographie Cédric Gicquel" loading="lazy" width="1000" height="1333">
+      <span class="img-cap">Tout bouge autour de vous. Il faut quelqu'un qui garde l'heure.</span>
     </div>
   </div>
 </section>
@@ -418,6 +433,18 @@ footer{background:var(--nd);padding:56px 60px;display:grid;grid-template-columns
     <div class="cr-card reveal d1"><b>Restaurant-concert</b><span>Créé et dirigé</span></div>
     <div class="cr-card reveal d2"><b>Guinguette</b><span>Créée et dirigée</span></div>
     <div class="cr-card reveal d3"><b>Bar de nuit</b><span>Créé et dirigé</span></div>
+  </div>
+  <div class="award reveal">
+    <div class="award-img"><img src="trophee.jpg" alt="Trophée Tripadvisor Travellers' Choice Best of the Best 2025 posé sur une table dressée" loading="lazy" width="1400" height="1073"></div>
+    <div class="award-txt">
+      <p class="award-t">Le travail d'équipe,<br><em>reconnu.</em></p>
+      <p>Dans le dernier établissement que j'ai dirigé, on n'a pas couru après les récompenses. On a structuré, formé, stabilisé l'équipe. Les clients l'ont vu.</p>
+      <div class="award-list">
+        <div><b>Top 1 %</b><span>Tripadvisor Travellers' Choice, Best of the Best 2025</span></div>
+        <div><b>UMIH</b><span>Prix national 2025</span></div>
+        <div><b>23 → 5 %</b><span>Turnover de l'équipe</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
